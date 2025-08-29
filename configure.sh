@@ -30,11 +30,16 @@ ln -sf ~/Dropbox/devArturo/repos/dev/dotfiles/borders/*  ~/.config/borders
 mkdir -p ~/.config/aerospace
 ln -sf ~/Dropbox/devArturo/repos/dev/dotfiles/aerospace/*  ~/.config/aerospace
 
-#Start  Sketchybar & aerospace startup services
+#Start  services
 open -a AeroSpace
 aerospace enable on
+borders &
+ #Create startup services
+brew services start borders
 brew services start sketchybar
-#Start  Sketchybar & Jankyborders configs all-together
+#Reload configs
+#pkill borders && borders &
+brew services restart borders
 aerospace reload-config
 sketchybar --reload
 
