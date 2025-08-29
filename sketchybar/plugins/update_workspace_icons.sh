@@ -19,9 +19,8 @@ update_space_icons() {
     sketchybar --set space.$sid label="$icon_strip"
 }
 
-# Update all workspaces to ensure clean state
-for monitor in $(aerospace list-monitors --format "%{monitor-appkit-nsscreen-screens-id}"); do
-    for sid in $(aerospace list-workspaces --monitor "$monitor"); do
-        update_space_icons "$sid"
-    done
+# Update all workspaces across all monitors to ensure clean state
+all_workspaces=$(aerospace list-workspaces --all | sort -u)
+for sid in $all_workspaces; do
+    update_space_icons "$sid"
 done
