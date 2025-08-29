@@ -10,25 +10,31 @@ ln -sf ~/Dropbox/devArturo/repos/dev/dotfiles/powerlevel10k/* ~/powerlevel10k
 ln -sf ~/Dropbox/devArturo/repos/dev/dotfiles/zsh/.zshrc ~/.zshrc
 source ~/.zshrc
 
-#Create folder structure and symbolic links for Sketchybar config
-mkdir -p ~/.config/sketchybar
-ln -sf ~/Dropbox/devArturo/repos/dev/dotfiles/sketchybar/* ~/.config/sketchybar/
-
-#Install Sketchbar as a service
-brew tap FelixKratz/formulae
-brew install sketchybar
-mkdir -p ~/.config/sketchybar/items
-mkdir -p ~/.config/sketchybar/plugins
-cp $(brew --prefix)/share/sketchybar/examples/sketchybarrc ~/.config/sketchybar/sketchybarrc
-cp -r $(brew --prefix)/share/sketchybar/examples/plugins/ ~/.config/sketchybar/plugins/
-brew services start sketchybar
-
 #Install JankyBorders
 brew tap FelixKratz/formulae
 brew install borders
+#Install Sketchbar as a service
+brew tap FelixKratz/formulae
+brew install sketchybar
+#Install Aerospace
+brew install --cask nikitabobko/tap/aerospace
+
+
+#Create folder structure and symbolic links for Sketchybar config
+mkdir -p ~/.config/sketchybar
+ln -sf ~/Dropbox/devArturo/repos/dev/dotfiles/sketchybar/* ~/.config/sketchybar/
 #Create symbolic links for JankyBorders
 mkdir -p ~/.config/borders
 ln -sf ~/Dropbox/devArturo/repos/dev/dotfiles/borders/*  ~/.config/borders
-#Reload Sketchybar & Jankyborders configs all-together
+#Create sumbolic links for Aerospace
+mkdir -p ~/.config/aerospace
+ln -sf ~/Dropbox/devArturo/repos/dev/dotfiles/aerospace/*  ~/.config/aerospace
+
+#Start  Sketchybar & aerospace startup services
+open -a AeroSpace
+aerospace enable on
+brew services start sketchybar
+#Start  Sketchybar & Jankyborders configs all-together
+aerospace reload-config
 sketchybar --reload
 
