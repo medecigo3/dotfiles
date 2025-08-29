@@ -1,0 +1,25 @@
+--Taken from: https://www.youtube.com/watch?v=S-xzYgTLVJE&t=41s
+return {
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			require ("mason").setup ()
+		end
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		version = "1.32.0", --Fix: fixing the plugin version was taken from ChatGPT session when given the following error "attempt to call field 'setup_handlers' (a nil value)"
+		config = function()
+			require ("mason-lspconfig").setup({
+				ensure_installed = { "lua_ls" }
+		})
+		end
+	},
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			local lspconfig = require("lspconfig")
+			lspconfig.lua_ls.setup({})
+		end
+	}
+}
