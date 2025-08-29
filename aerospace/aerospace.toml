@@ -179,20 +179,17 @@ alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
 # Default space
+#To find an app id run osascript -e 'id of app "intelliJ_IDEA_2025.1.2"'
 [[on-window-detected]]
-if.app-id ='com.google.Browser'
-run = ['move-node-to-workspace 2']
-
-[[on-window-detected]]
-if.app-id ='com.brave.Browser.app.adcclpceapdbhchilkbngkehpppaefko'
+if.app-id ='com.apple.Finder'
 run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
-if.app-id ='com.mitchellh.ghostty'
+if.app-id ='org.keepassxc.keepassxc'
 run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
-if.app-id ='com.todesktop.230313mzl4w4u92'
+if.app-id ='dev.warp.Warp-Stable'
 run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
@@ -204,16 +201,17 @@ if.app-id ='md.obsidian'
 run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
-if.app-id ='com.tinyspeck.slackmacgap'
+if.app-id ='com.parallels.desktop.console'
 run = ['move-node-to-workspace 5']
 
-[[on-window-detected]]
-if.app-id ='com.hnc.Discord'
-run = ['move-node-to-workspace 5']
 
 [[on-window-detected]]
 if.app-id ='com.adobe.PremierePro.24'
 run = ['move-node-to-workspace 6']
+
+[[on-window-detected]]
+if.app-id ='com.jetbrains.intellij'
+run = ['move-node-to-workspace 7']
 
 # force certain workspaces to certain monitors
 [workspace-to-monitor-force-assignment]
