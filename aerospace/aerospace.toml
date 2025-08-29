@@ -68,10 +68,10 @@ preset = 'qwerty'
 [gaps]
 inner.horizontal = 8
 inner.vertical = 8
-outer.bottom = 5
-outer.top = [{ monitor.main = 5}, { monitor.secondary = 36}, 36]  # Main has notch, secondary needs 28px + 8px
-outer.right = 5
-outer.left = 5
+outer.bottom = [{ monitor.main = 40}, { monitor.secondary = 42}, 40]  # 40px for sketchybar + 5px gap
+outer.top = 2
+outer.right = 2
+outer.left = 2
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

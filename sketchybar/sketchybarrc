@@ -15,7 +15,7 @@ SPOTIFY_EVENT="com.spotify.client.PlaybackStateChanged"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=$CAT_BASE_TRANSPARENT
+sketchybar --bar position=bottom height=40 blur_radius=30 color=$CAT_BASE_TRANSPARENT
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
