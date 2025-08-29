@@ -46,9 +46,9 @@ sketchybar --add event aerospace_workspace_change
 for monitor in $(aerospace list-monitors --format "%{monitor-appkit-nsscreen-screens-id}"); do
   for sid in $(aerospace list-workspaces --monitor "$monitor"); do
     # Determine which display this workspace should be shown on
-    display_id="1"
-    if [ "$sid" -ge 6 ] && [ "$sid" -le 7 ]; then
-      display_id="2"
+    display_id="2"
+    if [ "$sid" -ge 1 ] && [ "$sid" -le 2 ]; then
+      display_id="1"
     fi
     
     sketchybar --add item space.$sid left \
