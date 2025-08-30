@@ -10,7 +10,8 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-    'exec-and-forget /bin/bash -c "sleep 2 && /Users/medecigo3/.config/sketchybar/plugins/reinit_workspaces.sh"'
+    'exec-and-forget /bin/bash -c "sleep 2 && /Users/medecigo3/.config/sketchybar/plugins/reinit_workspaces.sh"',
+    'exec-and-forget /bin/bash -c "sleep 3 && /Users/medecigo3/.config/aerospace/organize-workspaces.sh"'
 ]
 
 # Start AeroSpace at login
@@ -113,7 +114,8 @@ alt-o = 'exec-and-forget open -a /Applications/OBS.app/'
 alt-b = 'exec-and-forget open -a /Applications/Obsidian.app'  # Changed from alt-w to alt-b
 alt-n = 'exec-and-forget open -a /Applications/Notion.app'
 alt-a = 'exec-and-forget open -a /Applications/ChatGPT.app'
-alt-shift-r = ['exec-and-forget /opt/homebrew/bin/sketchybar --reload']
+alt-shift-r = 'exec-and-forget /opt/homebrew/bin/sketchybar --reload'
+alt-shift-o = 'exec-and-forget /bin/bash -c "/Users/medecigo3/.config/aerospace/organize-workspaces.sh"'
 
 # See: https://nikitabobko.github.ioeAeroSpace/commands#layout
 alt-e = 'layout tiles horizontal vertical'
@@ -195,6 +197,10 @@ if.app-id ='dev.warp.Warp-Stable'
 run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
+if.app-id ='com.apple.Terminal'
+run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
 if.app-id ='notion.id'
 run = ['move-node-to-workspace 4']
 
@@ -206,9 +212,12 @@ run = ['move-node-to-workspace 4']
 if.app-id ='com.parallels.desktop.console'
 run = ['move-node-to-workspace 5']
 
-
 [[on-window-detected]]
 if.app-id ='com.adobe.PremierePro.24'
+run = ['move-node-to-workspace 6']
+
+[[on-window-detected]]
+if.app-id ='com.google.Chrome'
 run = ['move-node-to-workspace 6']
 
 [[on-window-detected]]
