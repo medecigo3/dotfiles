@@ -1,11 +1,13 @@
 #!/bin/bash
 
+# Load Catppuccin Mocha colors
+source "$HOME/.config/catppuccin/catppuccin-latte.sh"
 options=(
 	style=round
 	width=5
 	hidpi=off
-	active_color=0xFFE64553
-	inactive_color=0xFF9CA0B0
+	active_color=$CAT_MAUVE
+	inactive_color=$CAT_SURFACE0
 )
 
 borders "${options[@]}"

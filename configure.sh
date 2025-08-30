@@ -19,7 +19,9 @@ brew install sketchybar
 #Install Aerospace
 brew install --cask nikitabobko/tap/aerospace
 
-
+#Create folder structure and symbolic links for Catppuccin theme libraries
+mkdir -p ~/.config/catppuccin
+ln -sf ~/Dropbox/devArturo/repos/dev/dotfiles/catppuccin/* ~/.config/catppuccin/
 #Create folder structure and symbolic links for Sketchybar config
 mkdir -p ~/.config/sketchybar
 ln -sf ~/Dropbox/devArturo/repos/dev/dotfiles/sketchybar/* ~/.config/sketchybar/
