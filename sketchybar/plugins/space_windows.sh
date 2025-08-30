@@ -21,4 +21,12 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
       sketchybar --set space.$workspace label=""
     fi
   done
+  
+  # Reposition front_app after workspace changes
+  workspaces=$(sketchybar --query bar | grep -o 'space\.[0-9]*' | sort -V)
+  last_workspace=$(echo "$workspaces" | tail -1)
+  
+  if [ -n "$last_workspace" ]; then
+    sketchybar --move front_app after "$last_workspace"
+  fi
 fi

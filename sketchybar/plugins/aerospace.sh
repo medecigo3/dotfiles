@@ -8,3 +8,12 @@ if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
 else
   sketchybar --set $NAME background.color=0x44FFFFFF label.shadow.drawing=off icon.shadow.drawing=off background.border_width=0
 fi
+
+# Reposition front_app after workspace changes
+# Get all workspace items sorted numerically
+workspaces=$(sketchybar --query bar | grep -o 'space\.[0-9]*' | sort -V)
+last_workspace=$(echo "$workspaces" | tail -1)
+
+if [ -n "$last_workspace" ]; then
+    sketchybar --move front_app after "$last_workspace"
+fi

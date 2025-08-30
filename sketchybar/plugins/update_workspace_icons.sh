@@ -24,3 +24,11 @@ all_workspaces=$(aerospace list-workspaces --all | sort -u)
 for sid in $all_workspaces; do
     update_space_icons "$sid"
 done
+
+# Reposition front_app after updating workspaces
+workspaces=$(sketchybar --query bar | grep -o 'space\.[0-9]*' | sort -V)
+last_workspace=$(echo "$workspaces" | tail -1)
+
+if [ -n "$last_workspace" ]; then
+    sketchybar --move front_app after "$last_workspace"
+fi
