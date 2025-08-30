@@ -131,7 +131,7 @@ sketchybar --add item weather.moon q \
     display=2 \
 #    background.color=0x667dc4e4 \
     background.padding_right=-1 \
-    icon.color=0xff181926 \
+    icon.color=$CAT_CRUST \
     icon.font="$FONT_FACE:Bold:22.0" \
     icon.padding_left=4 \
     icon.padding_right=3 \
@@ -142,7 +142,7 @@ sketchybar --add item weather q \
     --set weather \
     display=2 \
     icon= \
-    icon.color=0xfff5bde6 \
+    icon.color=$CAT_PINK \
     icon.font="$FONT_FACE:Bold:15.0" \
     update_freq=1800 \
     script="$PLUGIN_DIR/weather.sh" \

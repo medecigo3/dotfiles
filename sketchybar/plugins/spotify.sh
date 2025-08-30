@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Load Catppuccin colors
+source "$HOME/.config/catppuccin/catppuccin-mocha.sh"
+
 # Max number of characters so it fits nicely to the right of the notch
 # MAY NOT WORK WITH NON-ENGLISH CHARACTERS
 
@@ -49,7 +52,7 @@ update_track() {
         sketchybar --set $NAME label="${TRACK}  ${ARTIST}" \
             label.drawing=yes \
             label.font="JetBrainsMono Nerd Font:Medium:12.0" \
-            icon.color=0xffa6da95
+            icon.color=$CAT_GREEN
 #           background.color=0xffa6da95 \
 
     elif [ $PLAYER_STATE = "Paused" ]; then

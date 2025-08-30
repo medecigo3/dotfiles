@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
+# Load Catppuccin colors
+source "$HOME/.config/catppuccin/catppuccin-mocha.sh"
+
 # make sure it's executable with:
 # chmod +x ~/.config/sketchybar/plugins/aerospace.sh
 
 if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
-  sketchybar --set $NAME background.color=0x88FF00FF label.shadow.drawing=on icon.shadow.drawing=on background.border_width=2
+  sketchybar --set $NAME background.color=$CAT_MAUVE label.shadow.drawing=on icon.shadow.drawing=on background.border_width=2
 else
-  sketchybar --set $NAME background.color=0x44FFFFFF label.shadow.drawing=off icon.shadow.drawing=off background.border_width=0
+  sketchybar --set $NAME background.color=$CAT_SURFACE0_TRANSPARENT label.shadow.drawing=off icon.shadow.drawing=off background.border_width=0
 fi
 
 # Reposition front_app after workspace changes

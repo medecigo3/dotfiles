@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Source Catppuccin colors
-source "$HOME/.config/sketchybar/plugins/catppuccin-mocha.sh"
+source "$HOME/.config/catppuccin/catppuccin-mocha.sh"
 
 CONFIG_DIR="$HOME/.config/sketchybar"
 
