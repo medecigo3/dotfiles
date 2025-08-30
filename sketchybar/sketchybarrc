@@ -2,7 +2,7 @@
 # Not too different from the base starting config!
 
 # Load Catppuccin Mocha colors
-source "$HOME/.config/sketchybar/plugins/catppuccin-mocha.sh"
+source "$HOME/.config/catppuccin/catppuccin-mocha.sh"
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEM_DIR="$CONFIG_DIR/items" 
