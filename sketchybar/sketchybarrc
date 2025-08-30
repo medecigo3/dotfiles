@@ -1,11 +1,11 @@
 # A simple sketchybar config for aerospace users to get started with
 # Not too different from the base starting config!
 
-# Load Catppuccin Mocha colors
+# Load Catppuccin colors
 source "$HOME/.config/catppuccin/catppuccin-mocha.sh"
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
-ITEM_DIR="$CONFIG_DIR/items" 
+ITEM_DIR="$CONFIG_DIR/items"
 FONT_FACE="JetBrainsMono Nerd Font"
 SPOTIFY_EVENT="com.spotify.client.PlaybackStateChanged"
 ##### Bar Appearance #####
@@ -125,42 +125,8 @@ fi
 #front app
 source "$ITEM_DIR/front_app.sh"
 
-### Adding centered Items (for laptop with notch) ####
-sketchybar --add item weather.moon q \
-    --set weather.moon \
-    display=2 \
-#    background.color=0x667dc4e4 \
-    background.padding_right=-1 \
-    icon.color=$CAT_CRUST \
-    icon.font="$FONT_FACE:Bold:22.0" \
-    icon.padding_left=4 \
-    icon.padding_right=3 \
-    label.drawing=off \
-    --subscribe weather.moon mouse.clicked
 
-sketchybar --add item weather q \
-    --set weather \
-    display=2 \
-    icon= \
-    icon.color=$CAT_PINK \
-    icon.font="$FONT_FACE:Bold:15.0" \
-    update_freq=1800 \
-    script="$PLUGIN_DIR/weather.sh" \
-    --subscribe weather system_woke
-
-sketchybar --add event spotify_change $SPOTIFY_EVENT \
-    --add item spotify e \
-    --set spotify \
-    display=2 \
-    icon= \
-    icon.y_offset=1 \
-    icon.font="$FONT_FACE:Bold:20.0" \
-    label.drawing=off \
-    label.padding_left=3 \
-    script="$PLUGIN_DIR/spotify.sh" \
-    --subscribe spotify spotify_change mouse.clicked
-
-##### Adding Right Items #####
+##### Adding Right Items from right to left: Clock → Volume → Battery → Spotify → Weather.moon -> Weather #####
 # In the same way as the left items we can add items to the right side.
 # Additional position (e.g. center) are available, see:
 # https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
@@ -185,6 +151,40 @@ sketchybar --add item clock right \
   icon.color=$CAT_SUBTEXT0 \
   label.color=$CAT_SUBTEXT0
 
+sketchybar --add event spotify_change $SPOTIFY_EVENT \
+    --add item spotify right \
+    --set spotify \
+    display=2 \
+    icon= \
+    icon.y_offset=1 \
+    icon.font="$FONT_FACE:Bold:20.0" \
+    label.drawing=off \
+    label.padding_left=3 \
+    script="$PLUGIN_DIR/spotify.sh" \
+    --subscribe spotify spotify_change mouse.clicked
+
+sketchybar --add item weather.moon right \
+    --set weather.moon \
+    display=2 \
+#    background.color=0x667dc4e4 \
+    background.padding_right=-1 \
+    icon.color=$CAT_CRUST \
+    icon.font="$FONT_FACE:Bold:22.0" \
+    icon.padding_left=4 \
+    icon.padding_right=3 \
+    label.drawing=off \
+    --subscribe weather.moon mouse.clicked
+
+sketchybar --add item weather right \
+    --set weather \
+    display=2 \
+    icon= \
+    icon.color=$CAT_PINK \
+    icon.font="$FONT_FACE:Bold:15.0" \
+    update_freq=1800 \
+    script="$PLUGIN_DIR/weather.sh" \
+    --subscribe weather system_woke
+
 # Add a hidden workspace monitor that updates icons every 2 seconds
 sketchybar --add item workspace_monitor center \
   --set workspace_monitor \
@@ -194,4 +194,3 @@ sketchybar --add item workspace_monitor center \
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
-
