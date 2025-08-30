@@ -2,7 +2,7 @@ vim.cmd("let g:netrw_liststyle = 3") -- Tree explorer for built-in file explorer
 local opt = vim.opt -- for conciseness
 
 --Appends Dropbox workspace to Nvim runtime path
-opt.runtimepath:prepend("/Users/medecigo3/Dropbox/devArturo/workspaces/Linux/.config/nvim")
+opt.runtimepath:prepend(vim.fn.expand("~/Dropbox/devArturo/workspaces/Linux/.config/nvim"))
 
 -- line numbers
 --opt.relativenumber = true -- show relative line numbers

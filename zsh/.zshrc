@@ -15,7 +15,7 @@
 #Starship config
 eval "$(starship init zsh)"
 # Exported paths
-export PATH="/Users/medecigo3/Dropbox/devArturo/apps/Git/git-2.49.0(brew-install)/bin:$PATH"
-#export PATH="/Users/medecigo3/Dropbox/devArturo/apps/Oracle/jdk-24.0.1.jdk(mac)/Contents/Home/bin:$PATH"
-export PATH="/Users/medecigo3/Dropbox/devArturo/apps/Oracle/jdk1.8.0_451(mac)/Contents/Home/bin:$PATH"
-export PATH="/Users/medecigo3/Dropbox/devArturo/apps/apache/apache-maven-3.9.9/bin:$PATH"
+export PATH="$HOME/Dropbox/devArturo/apps/Git/git-2.49.0(brew-install)/bin:$PATH"
+#export PATH="$HOME/Dropbox/devArturo/apps/Oracle/jdk-24.0.1.jdk(mac)/Contents/Home/bin:$PATH"
+export PATH="$HOME/Dropbox/devArturo/apps/Oracle/jdk1.8.0_451(mac)/Contents/Home/bin:$PATH"
+export PATH="$HOME/Dropbox/devArturo/apps/apache/apache-maven-3.9.9/bin:$PATH"

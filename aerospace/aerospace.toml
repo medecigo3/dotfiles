@@ -10,8 +10,8 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-    'exec-and-forget /bin/bash -c "sleep 2 && /Users/medecigo3/.config/sketchybar/plugins/reinit_workspaces.sh"',
-    'exec-and-forget /bin/bash -c "sleep 3 && /Users/medecigo3/.config/aerospace/organize-workspaces.sh"'
+    'exec-and-forget /bin/bash -c "sleep 2 && ~/.config/sketchybar/plugins/reinit_workspaces.sh"',
+    'exec-and-forget /bin/bash -c "sleep 3 && ~/.config/aerospace/organize-workspaces.sh"'
 ]
 
 # Start AeroSpace at login
@@ -115,7 +115,7 @@ alt-b = 'exec-and-forget open -a /Applications/Obsidian.app'  # Changed from alt
 alt-n = 'exec-and-forget open -a /Applications/Notion.app'
 alt-a = 'exec-and-forget open -a /Applications/ChatGPT.app'
 alt-shift-r = 'exec-and-forget /opt/homebrew/bin/sketchybar --reload'
-alt-shift-o = 'exec-and-forget /bin/bash -c "/Users/medecigo3/.config/aerospace/organize-workspaces.sh"'
+alt-shift-o = 'exec-and-forget /bin/bash -c "~/.config/aerospace/organize-workspaces.sh"'
 
 # See: https://nikitabobko.github.ioeAeroSpace/commands#layout
 alt-e = 'layout tiles horizontal vertical'
