@@ -185,6 +185,13 @@ sketchybar --add item clock right \
   icon.color=$CAT_SUBTEXT0 \
   label.color=$CAT_SUBTEXT0
 
+# Add a hidden workspace monitor that updates icons every 2 seconds
+sketchybar --add item workspace_monitor center \
+  --set workspace_monitor \
+  drawing=off \
+  update_freq=2 \
+  script="$PLUGIN_DIR/workspace_monitor.sh"
+
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
 
